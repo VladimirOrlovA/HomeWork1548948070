@@ -1,4 +1,5 @@
 #include<iostream>
+#include<locale.h>
 #include<Windows.h>
 
 using namespace std;
@@ -48,14 +49,37 @@ int main()
 // вычитания, деления двух чисел(эти функции тоже нужно написать самостоятельно).
 
 
+int addition(int a, int b)
+{
+	return  a + b;
+}
+
+int subtraction(int a, int b)
+{
+	return  a - b;
+}
+
+int multiplaction(int a, int b)
+{
+	return  a * b;
+}
+
+int division(int a, int b)
+{
+	return  a / b;
+}
+
+
+
 int main()
 {
 	int a, b, operation, flag = 0;
 	char answer;
 
-	SetConsoleCP(866);		
-	SetConsoleOutputCP(866);	
+	//SetConsoleCP(1251);		
+	//SetConsoleOutputCP(1251);	
 
+	setlocale(LC_ALL, " ");
 
 	cout<< "\nВведите число a => ";
 	cin >> a;
@@ -65,25 +89,28 @@ int main()
 
 	do
 	{
+	
+	cout << "\nАрифметическая опрация: ";
+	cout << "\n\n (1) - Сложение \n (2) - Вычитание \n (3) - Умножение \n (4) - Деление ";
 
-	cout << "\nВыберите операцию => ";
+	cout << "\n\nВыберите операцию => ";
 	cin >> operation;
 
 	switch (operation)
 	{
-	case1: {}break;
-	case1: {}break;
-	case1: {}break;
-	case1: {}break;
-	case1: {}break;
-
+	case 1: {addition(a, b); }break;
+	case 2: {subtraction(a, b); }break;
+	case 3: {multiplaction(a, b); }break;
+	case 4: {division(a, b); }break;
+	
 	default: cout << "\nВыбранной операции нет в списке. Повторите свой выбор...\n";
+
 	}
 	
 	cout << "\nВы хотите продолжить y/n ? => ";
 	cin >> answer;
 
-	if (answer == 'y') flag == 1
+	if (answer != 'y') flag = 1;
 
 
 	} while (flag == 0);
