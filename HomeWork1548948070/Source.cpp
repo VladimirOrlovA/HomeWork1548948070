@@ -150,14 +150,19 @@ void check(int n)
 
 int main()
 {
-	int n;
-
+	int n, count = 0;
+	
 	setlocale(LC_ALL, "");
 
-	cout << "¬введите провер€емое число => ";
-	cin >> n;
+	do
+	{
+		cout << "¬введите провер€емое число => ";
+		cin >> n;
+		check(n);
 
-	check(n);
+		count++;
+
+	} while (count < 3);
 
 	system("pause");
 }
