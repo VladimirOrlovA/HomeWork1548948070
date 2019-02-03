@@ -7,7 +7,7 @@ using namespace std;
 // HomeWork1548948070 rev20190203
 
 
-// 1.	Написать функцию, которая возвращает истину, если передаваемое значение положительное и ложь, если отрицательное.
+////////////  1.	Написать функцию, которая возвращает истину, если передаваемое значение положительное и ложь, если отрицательное.
 
 /*
 
@@ -45,28 +45,29 @@ int main()
 */
 
 
-// 2.	Написать функцию, которая в зависимости от выбора пользователя вызывает функции сложения, произведения, 
-// вычитания, деления двух чисел(эти функции тоже нужно написать самостоятельно).
+////////////  2.	Написать функцию, которая в зависимости от выбора пользователя вызывает функции сложения, произведения, 
+////////////  вычитания, деления двух чисел(эти функции тоже нужно написать самостоятельно).
 
-
-int addition(int a, int b)
+/*
+void addition(int a, int b)
 {
-	return  a + b;
+	cout << endl << a + b << endl;
 }
 
-int subtraction(int a, int b)
+void subtraction(int a, int b)
 {
-	return  a - b;
+	cout << endl << a - b << endl;
 }
 
-int multiplaction(int a, int b)
+void multiplaction(int a, int b)
 {
-	return  a * b;
+	cout << endl << a * b << endl;
 }
 
-int division(int a, int b)
+void division(int a, int b)
 {
-	return  a / b;
+	if (b != 0) cout << endl << a / b << endl;
+	else cout << endl << "Ошибка: Деление на ноль!!!" << endl;
 }
 
 
@@ -79,40 +80,47 @@ int main()
 	//SetConsoleCP(1251);		
 	//SetConsoleOutputCP(1251);	
 
-	setlocale(LC_ALL, " ");
-
-	cout<< "\nВведите число a => ";
-	cin >> a;
-
-	cout << "\nВведите число b => ";
-	cin >> b;
+	setlocale(LC_ALL, "");
 
 	do
 	{
-	
-	cout << "\nАрифметическая опрация: ";
-	cout << "\n\n (1) - Сложение \n (2) - Вычитание \n (3) - Умножение \n (4) - Деление ";
 
-	cout << "\n\nВыберите операцию => ";
-	cin >> operation;
+		cout << "\nВведите число a => ";
+		cin >> a;
 
-	switch (operation)
-	{
-	case 1: {addition(a, b); }break;
-	case 2: {subtraction(a, b); }break;
-	case 3: {multiplaction(a, b); }break;
-	case 4: {division(a, b); }break;
-	
-	default: cout << "\nВыбранной операции нет в списке. Повторите свой выбор...\n";
+		cout << "\nВведите число b => ";
+		cin >> b;
 
-	}
-	
-	cout << "\nВы хотите продолжить y/n ? => ";
-	cin >> answer;
+		cout << "\nАрифметическая опрация: ";
+		cout << "\n\n (1) - Сложение \n (2) - Вычитание \n (3) - Умножение \n (4) - Деление ";
 
-	if (answer != 'y') flag = 1;
+		cout << "\n\nВыберите операцию => ";
+		cin >> operation;
+
+
+		switch (operation)
+		{
+
+		case 1: {addition(a, b); }break;
+		case 2: {subtraction(a, b); }break;
+		case 3: {multiplaction(a, b); }break;
+		case 4: {division(a, b); }break;
+
+		default: cout << "\nВыбранной операции нет в списке. Повторите свой выбор...\n";
+
+		}
+
+		cout << "\nВы хотите продолжить y/n ? => ";
+		cin >> answer;
+
+		if (answer != 'y') flag = 1;
 
 
 	} while (flag == 0);
 
 }
+*/
+
+
+////////////  3.	Написать функцию, которая проверяет, является ли переданное ей число простым? Число называется простым, 
+////////////  если оно делится без остатка только на себя и на единицу.
